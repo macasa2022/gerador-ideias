@@ -233,6 +233,9 @@ const App = () => {
             )}
           </div>
         )}
+        <footer className="fixed bottom-0 left-0 right-0 py-3 text-center text-sm text-yellow-200 bg-black bg-opacity-20 backdrop-blur-md border-t border-white border-opacity-10">
+          ⚡ Desenvolvido por MACASA © {new Date().getFullYear()}
+        </footer>
       </div>
     </div>
   );
