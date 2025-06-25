@@ -5,7 +5,8 @@ const App = () => {
   const [prompt, setPrompt] = useState("");
   const [numIdeas, setNumIdeas] = useState(5); // New state for number of ideas, default to 5
   const [ideaType, setIdeaType] = useState(""); // New state for idea type/style
-  const [ideas, setIdeas] = useState([]);
+  //const [ideas, setIdeas] = useState([]);
+  const [ideas, setIdeas] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [copySuccess, setCopySuccess] = useState(""); // State for copy success message
@@ -69,7 +70,7 @@ const App = () => {
         // Split the generated text into individual ideas
         const ideaList = generatedText
           .split("\n")
-          .filter((line) => line.trim().length > 0);
+          .filter((line: string) => line.trim().length > 0);
         setIdeas(ideaList);
       } else {
         setError("Não foi possível gerar ideias. Por favor, tente novamente.");
